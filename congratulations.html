@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Congratulations</title>
+<title>Congratulations!</title>
 
 <style>
 *{
@@ -15,6 +15,9 @@
 body{
     height:100vh;
     overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
     font-family:'Segoe UI',sans-serif;
 
     background:linear-gradient(
@@ -30,51 +33,36 @@ body{
 }
 
 @keyframes bgMove{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
 }
 
-.scroll{
+.message{
     position:absolute;
     white-space:nowrap;
-    font-weight:bold;
-    animation: move 10s linear infinite,
-               jump 1s ease-in-out infinite;
-}
-
-.congrats{
-    top:20%;
     font-size:4rem;
+    font-weight:bold;
     color:white;
-    text-shadow:
-        0 0 10px #fff,
-        0 0 20px #ff1493,
-        0 0 40px #ff1493;
-}
 
-.luck{
-    top:45%;
-    font-size:3rem;
-    color:#fffacd;
-    text-shadow:
-        0 0 10px #fff,
-        0 0 20px #ffd700;
-    animation-delay:1s;
-}
-
-.love{
-    top:70%;
-    font-size:3.5rem;
-    color:white;
     text-shadow:
         0 0 10px #fff,
         0 0 20px #ff69b4,
-        0 0 40px #ff69b4;
-    animation-delay:2s;
+        0 0 40px #ff69b4,
+        0 0 60px #ff69b4;
+
+    animation:
+        moveAcross 8s linear infinite,
+        jump 0.8s ease-in-out infinite;
 }
 
-@keyframes move{
+@keyframes moveAcross{
     from{
         left:-100%;
     }
@@ -87,8 +75,9 @@ body{
     0%,100%{
         transform:translateY(0);
     }
+
     50%{
-        transform:translateY(-25px);
+        transform:translateY(-35px);
     }
 }
 </style>
@@ -96,15 +85,9 @@ body{
 </head>
 <body>
 
-<div class="scroll congrats">
-    🎉 Congratulations! 🎉
-</div>
-
-<div class="scroll luck">
-    ✨ Best of Luck ✨
-</div>
-
-<div class="scroll love">
+<div class="message">
+    🎉 Congratulations! 🎉<br>
+    ✨ Best of Luck ✨<br>
     💖 Love You 💖
 </div>
 
