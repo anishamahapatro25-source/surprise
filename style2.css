@@ -6,20 +6,22 @@
 
 body{
     height:100vh;
-    overflow:hidden;
     display:flex;
     justify-content:center;
     align-items:center;
+    overflow:hidden;
+    font-family:'Segoe UI',sans-serif;
+
     background:linear-gradient(
         135deg,
         #ff9a9e,
-        #fad0c4,
-        #fbc2eb,
-        #a18cd1
+        #fecfef,
+        #f6d365,
+        #fda085
     );
+
     background-size:400% 400%;
     animation:bgMove 8s ease infinite;
-    font-family:'Segoe UI', sans-serif;
 }
 
 @keyframes bgMove{
@@ -28,37 +30,73 @@ body{
     100%{background-position:0% 50%;}
 }
 
-.message{
-    position:absolute;
+.container{
+    text-align:center;
+}
+
+.congrats{
     font-size:4rem;
     font-weight:bold;
     color:white;
+
     text-shadow:
         0 0 10px #fff,
         0 0 20px #ff69b4,
         0 0 40px #ff69b4;
 
-    animation:
-        slideAcross 8s linear infinite,
-        jump 0.8s ease-in-out infinite;
+    animation: bounce 1s infinite;
 }
 
-@keyframes slideAcross{
-    0%{
-        transform:translateX(-120vw);
-    }
+.best-luck{
+    margin-top:20px;
+    font-size:2.5rem;
+    font-weight:bold;
+    color:#fff;
 
-    100%{
-        transform:translateX(120vw);
-    }
+    text-shadow:
+        0 0 10px #fff,
+        0 0 20px #ffd700;
+
+    animation: glow 2s infinite alternate;
 }
 
-@keyframes jump{
+.love{
+    margin-top:20px;
+    font-size:3rem;
+    font-weight:bold;
+    color:#fff;
+
+    text-shadow:
+        0 0 10px #fff,
+        0 0 20px #ff1493,
+        0 0 40px #ff1493;
+
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes bounce{
     0%,100%{
-        margin-top:0;
+        transform:translateY(0);
     }
-
     50%{
-        margin-top:-40px;
+        transform:translateY(-20px);
+    }
+}
+
+@keyframes glow{
+    from{
+        opacity:0.7;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.1);
     }
 }
